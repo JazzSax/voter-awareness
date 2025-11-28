@@ -14,15 +14,15 @@ function App() {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
   return (
-    <main className="w-full p-8 h-screen bg-white dark:bg-black text-black dark:text-white">
-      <button
-        onClick={toggleTheme}
-        className="p-3 bg-gray-200 dark:bg-gray-700 rounded"
-      >
-        {theme === "dark" ? <Sun /> : <Moon />}
-      </button>
+    <main className="w-full p-8 min-h-screen bg-white dark:bg-black text-black dark:text-white">
       <div className="grid grid-cols-12 relative ">
         <aside className="fixed left-5 top-50 translate-y-1/2">
+          <button
+            onClick={toggleTheme}
+            className="p-3 bg-gray-200 dark:bg-gray-700 rounded"
+          >
+            {theme === "dark" ? <Sun /> : <Moon />}
+          </button>
           <Navigation />
         </aside>
         <div className="col-span-8 col-start-3 flex flex-col justify-center items-center">
