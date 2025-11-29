@@ -1,5 +1,12 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
 html,
 body,
 #root {
@@ -7,5 +14,23 @@ body,
   scroll-behavior: smooth;
 }
 @utility heading-1 {
-  @apply lg:text-7xl text-5xl font-bold;
+  @apply lg:text-7xl text-5xl font-bold font-sans;
+}
+@utility heading-2 {
+  @apply lg:text-5xl text-4xl font-bold font-sans;
+}
+@utility main-section {
+  @apply lg:h-screen lg:snap-start lg:p-16 p-4;
+}
+
+.main-bg {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 40%,
+      rgba(0, 0, 0, 0.8) 70%
+    ),
+    url("./assets/bg/main-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
