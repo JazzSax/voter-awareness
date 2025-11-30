@@ -7,10 +7,27 @@ const MiddleSlider = ({ images }: { images: string[] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
+
     slides: {
       perView: 3,
       spacing: 30,
     },
+
+    breakpoints: {
+      "(max-width: 768px)": {
+        slides: {
+          perView: 1, // Show 1 slide on mobile
+          spacing: 10, // Smaller spacing
+        },
+      },
+      "(max-width: 480px)": {
+        slides: {
+          perView: 1,
+          spacing: 5,
+        },
+      },
+    },
+
     slideChanged(s) {
       setCurrentSlide(s.track.details.rel);
     },

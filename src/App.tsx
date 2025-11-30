@@ -16,7 +16,7 @@ function App() {
   return (
     <main className="lg:h-screen lg:snap-y lg:snap-mandatory lg:overflow-y-scroll relative">
       <Introduction>
-        <div className="flex flex-col lg:flex-row justify-between flex-1">
+        <div className="flex flex-col lg:flex-row justify-between items-center flex-1">
           <FlyerCard openSlider={changeSlider} setImages={setImages} />
           <PosterCard openSlider={changeSlider} setImages={setImages} />
           <TemplateCard openSlider={changeSlider} setImages={setImages} />
@@ -35,7 +35,7 @@ function App() {
       />
       <div
         className={clsx(
-          "fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-2 h-[80vh] flex items-center justify-center transition-opacity duration-300 ease-in-out w-full max-w-[90vw]",
+          "fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-2 lg:h-[80vh] flex items-center justify-center transition-opacity duration-300 ease-in-out w-full max-w-[90vw]",
           slider
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
