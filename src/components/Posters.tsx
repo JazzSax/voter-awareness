@@ -1,15 +1,24 @@
-import Sliders from "./Sliders";
+import Card from "./Cards";
 
-function Posters() {
+export default function PosterCard({
+  openSlider,
+  setImages,
+}: {
+  openSlider?: () => void;
+  setImages?: (images: string[]) => void;
+}) {
   const modules: Record<string, string> = import.meta.glob(
     "../assets/posters/*",
     { eager: true, as: "url" }
   );
-  const title: string = "Posters";
-  const id: string = "posters";
-
   const images: string[] = Object.values(modules);
-  return <Sliders title={title} images={images} id={id} />;
+  const handleClick = () => {
+    if (setImages) {
+      setImages(images);
+    }
+    if (openSlider) {
+      openSlider();
+    }
+  };
+  return <Card images={images} title="Posters" onClick={handleClick} />;
 }
-
-export default Posters;

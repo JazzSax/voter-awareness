@@ -1,14 +1,24 @@
-import Sliders from "./Sliders";
+import Card from "./Cards";
 
-function PressRelease() {
+export default function PressReleaseCard({
+  openSlider,
+  setImages,
+}: {
+  openSlider?: () => void;
+  setImages?: (images: string[]) => void;
+}) {
   const modules: Record<string, string> = import.meta.glob(
     "../assets/press-releases/*",
     { eager: true, as: "url" }
   );
-
   const images: string[] = Object.values(modules);
-  const title: string = "Press Releases";
-  const id: string = "press-releases";
-  return <Sliders title={title} images={images} id={id} />;
+  const handleClick = () => {
+    if (setImages) {
+      setImages(images);
+    }
+    if (openSlider) {
+      openSlider();
+    }
+  };
+  return <Card images={images} title="Press Releases" onClick={handleClick} />;
 }
-export default PressRelease;

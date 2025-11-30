@@ -1,31 +1,12 @@
 import { Check } from "lucide-react";
-import Card from "./Card";
-function Introduction() {
-  const modules: Record<string, string> = import.meta.glob(
-    "../assets/posters/*",
-    { eager: true, as: "url" }
-  );
-  const images: string[] = Object.values(modules);
+
+function Introduction({ children }: { children?: React.ReactNode }) {
   return (
     <section className="main-section main-bg">
       <div className="flex flex-col gap-12 h-full">
         <div className="flex flex-col gap-4 flex-1">
           <h1 className="lg:text-7xl text-4xl text-white font-sans mb-4">
             Voter's Awareness Materials
-            {/* <Typewriter
-            words={[
-              "This is for Voter's Awareness",
-              "Explore and Learn",
-              "Awareness is Power",
-            ]}
-            cursor
-            cursorStyle="|"
-            cursorBlinking={true}
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-            loop={false}
-          /> */}
           </h1>
           <p className="lg:text-lg text-md text-white max-w-2xl leading-relaxed">
             This website provides clear, accessible, and visually engaging
@@ -53,12 +34,7 @@ function Introduction() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col lg:flex-row justify-between flex-1 ">
-          <Card images={images} title="Flyers" />
-          <Card images={images} title="Posters" />
-          <Card images={images} title="Templates" />
-          <Card images={images} title="Press Releases" />
-        </div>
+        {children}
       </div>
     </section>
   );
