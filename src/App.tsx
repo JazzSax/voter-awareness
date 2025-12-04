@@ -21,9 +21,9 @@ function App() {
 
   const renderPage = () => {
     return page === "about" ? (
-      <AboutPage data={DATA} />
-    ) : (
       <HomePage data={DATA} />
+    ) : (
+      <AboutPage data={DATA} />
     );
   };
   return <div>{renderPage()}</div>;
