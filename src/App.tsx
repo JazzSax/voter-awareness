@@ -1,16 +1,32 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import HomePage from "./components/HomePage";
 import AboutPage from "./components/AboutPage";
 import { DATA } from "./content";
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage data={DATA} />} />
-        <Route path="/about" element={<AboutPage data={DATA} />} />
-      </Routes>
-    </Router>
-  );
+  const [page, setPage] = useState("home");
+
+  useEffect(() => {
+    const getPageFromPath = () => {
+      const path = window.location.pathname.replace("/voter-awareness", "");
+      setPage(path === "/about" ? "about" : "home");
+    };
+
+    getPageFromPath();
+
+    const onPopState = () => getPageFromPath();
+    window.addEventListener("popstate", onPopState);
+
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const renderPage = () => {
+    return page === "about" ? (
+      <AboutPage data={DATA} />
+    ) : (
+      <HomePage data={DATA} />
+    );
+  };
+  return <div>{renderPage()}</div>;
 }
 
 export default App;
