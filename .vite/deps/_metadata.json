@@ -1,37 +1,73 @@
 {
-  "hash": "182d0835",
+  "hash": "39cdb9ae",
   "configHash": "628dad8b",
-  "lockfileHash": "dd71eef7",
-  "browserHash": "4d2de797",
+  "lockfileHash": "025a657a",
+  "browserHash": "e671537f",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "cf2e52cc",
+      "fileHash": "15870f74",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "93d6c48a",
+      "fileHash": "ea75bc5b",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "81eaa96e",
+      "fileHash": "c1d8eef8",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "e70cd990",
+      "needsInterop": false
+    },
+    "clsx": {
+      "src": "../../node_modules/clsx/dist/clsx.mjs",
+      "file": "clsx.js",
+      "fileHash": "7df18c68",
+      "needsInterop": false
+    },
+    "keen-slider/react": {
+      "src": "../../node_modules/keen-slider/react.js",
+      "file": "keen-slider_react.js",
+      "fileHash": "d841ab9f",
       "needsInterop": true
     },
     "lucide-react": {
       "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
       "file": "lucide-react.js",
-      "fileHash": "256e3bdc",
+      "fileHash": "9e61ce70",
+      "needsInterop": false
+    },
+    "@radix-ui/react-dialog": {
+      "src": "../../node_modules/@radix-ui/react-dialog/dist/index.mjs",
+      "file": "@radix-ui_react-dialog.js",
+      "fileHash": "c6e7c2c7",
+      "needsInterop": false
+    },
+    "tailwind-merge": {
+      "src": "../../node_modules/tailwind-merge/dist/bundle-mjs.mjs",
+      "file": "tailwind-merge.js",
+      "fileHash": "d008b359",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-2T7O2LGO": {
-      "file": "chunk-2T7O2LGO.js"
+    "chunk-KP7BIHBJ": {
+      "file": "chunk-KP7BIHBJ.js"
+    },
+    "chunk-ULSRCYB6": {
+      "file": "chunk-ULSRCYB6.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
     }
   }
 }
